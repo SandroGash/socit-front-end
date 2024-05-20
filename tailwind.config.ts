@@ -151,6 +151,11 @@ const config: Config = {
       ],
     },
 
+    borderRadius: {
+      DEFAULT: "10px",
+      full: "9999PiX",
+    },
+
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
