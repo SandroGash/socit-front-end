@@ -1,22 +1,23 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from "tailwindcss";
+
+export default {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     colors: {
       white: "#ffffff",
       primary: {
-        200: "#B3C28C",
+        200: "#79952c",
         300: "#708d23",
         400: "#68851a",
         DEFAULT: "#5f7d0f",
         600: "#577402",
       },
       secondary: {
-        200: "#29350a",
-        300: "#1f2707",
-        400: "#141a05",
-        DEFAULT: "#0a0d0e",
-        600: "#00000",
+        200: "#9d8933",
+        300: "#94812b",
+        400: "#8b7923",
+        DEFAULT: "#83711a",
+        600: "#7a6911",
       },
       gray: {
         400: "#f2f2f2",
@@ -152,7 +153,7 @@ module.exports = {
 
     borderRadius: {
       DEFAULT: "10px",
-      full: "9999px",
+      full: "9999PiX",
     },
 
     extend: {

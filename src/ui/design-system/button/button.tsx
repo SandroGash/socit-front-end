@@ -29,11 +29,11 @@ export const Button = ({
 
   switch (variant) {
     case "accent":
-      variantStyles = "bg-primary hover:bg-primary-400 text-white rounded";
+      variantStyles = "bg-primary-400 hover:bg-primary-200 text-white rounded";
       break;
     case "secondary":
       variantStyles =
-        "bg-primary-200 hover:bg-primary-300/50 text-primary rounded";
+        "bg-secondary-400 hover:bg-secondary-400/30 text-white rounded";
       break;
     case "outline":
       variantStyles =
@@ -91,8 +91,9 @@ export const Button = ({
         className={clsx(
           variantStyles,
           sizeStyles,
-          icoSize && "cursor-wait",
-          "relative"
+          icoSize,
+          isLoading && "cursor-wait",
+          "relative animate"
         )}
         onClick={() => console.log("click")}
         disabled={disabled}

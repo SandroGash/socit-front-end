@@ -23,7 +23,7 @@ export const Avatar = ({ size = "medium", src, alt }: Props) => {
   }
 
   return (
-    <div className={clsx(sizeStyle, "bg-gray400 rounded-full relative")}>
+    <div className={clsx(sizeStyle, "bg-gray-400 rounded-full relative")}>
       <Image
         fill
         src={src}
