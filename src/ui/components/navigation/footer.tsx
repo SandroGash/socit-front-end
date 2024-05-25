@@ -1,16 +1,17 @@
 import { Typography } from "@/ui/design-system/typography/typography";
 import { Container } from "../container/container";
 import Image from "next/image";
-import { footerApplicationLinks } from "./app-links";
+import { footerApplicationLinks, footerLinks } from "./app-links";
 import { v4 as uuidv4 } from "uuid";
 import { ActiveLink } from "./active-link";
-import { AppLinks } from "@/types/app-links";
+import { AppLinks, FooterLinks } from "@/types/app-links";
+import { LinkTypes } from "@/lib/link-type";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const footerNavigationList = footerApplicationLinks.map((element) => (
-    <div key={uuidv4()}>{element.label}</div>
+  const footerNavigationList = footerLinks.map((columnLinks) => (
+    <FooterLink key={uuidv4()} data={columnLinks} />
   ));
 
   return (
@@ -32,9 +33,7 @@ export const Footer = () => {
             />
           </a>
         </div>
-        <div className="">
-          <FooterLink data={footerApplicationLinks} />
-        </div>
+        <div className="flex gap-7">{footerNavigationList}</div>
       </Container>
       <Container className="pt-9 pb-11 space-y-11">
         <hr className="text-gray-800" />
@@ -57,16 +56,16 @@ export const Footer = () => {
 };
 
 interface footerLinkProps {
-  data: AppLinks[];
+  data: FooterLinks;
 }
 
 const FooterLink = ({ data }: footerLinkProps) => {
-  const linksList = data.map((link) => (
+  const linksList = data.links.map((link) => (
     <div key={uuidv4()}>
-      {link.type === "internal" && (
+      {link.type === LinkTypes.INTERNAL && (
         <ActiveLink href={link.baseUrl}>{link.label}</ActiveLink>
       )}
-      {link.type === "external" && (
+      {link.type === LinkTypes.EXTERNAL && (
         <a href={link.baseUrl} target="_blank">
           {link.label}
         </a>
@@ -82,7 +81,7 @@ const FooterLink = ({ data }: footerLinkProps) => {
         weight="medium"
         className="pb-5"
       >
-        Titre
+        {data.label}
       </Typography>
       <Typography theme="gray" variant="caption3" className="space-y-4">
         {linksList}

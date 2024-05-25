@@ -3,3 +3,8 @@ export interface AppLinks {
   baseUrl: string;
   type: string;
 }
+
+export interface FooterLinks {
+  label: string;
+  links: AppLinks[];
+}

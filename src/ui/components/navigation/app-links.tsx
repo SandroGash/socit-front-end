@@ -97,3 +97,25 @@ const footerSocialNetworksLinks: AppLinks[] = [
     type: "external",
   },
 ];
+
+export const footerLinks = [
+  {
+    label: "App",
+    links: footerApplicationLinks,
+  },
+
+  {
+    label: "Utilisateurs",
+    links: footerUserLinks,
+  },
+
+  {
+    label: "Information",
+    links: footerInformationLinks,
+  },
+
+  {
+    label: "Réseaux",
+    links: footerSocialNetworksLinks,
+  },
+];
