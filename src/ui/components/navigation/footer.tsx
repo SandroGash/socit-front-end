@@ -1,11 +1,12 @@
 import { Typography } from "@/ui/design-system/typography/typography";
 import { Container } from "../container/container";
 import Image from "next/image";
-import { footerApplicationLinks, footerLinks } from "./app-links";
+import { footerLinks } from "./app-links";
 import { v4 as uuidv4 } from "uuid";
 import { ActiveLink } from "./active-link";
 import { AppLinks, FooterLinks } from "@/types/app-links";
 import { LinkTypes } from "@/lib/link-type";
+import { SocialNetworksButtons } from "./social-networks-buttons";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -48,7 +49,9 @@ export const Footer = () => {
               Gash21
             </a>
           </Typography>
-          <div className=""></div>
+          <div className="">
+            <SocialNetworksButtons theme="gray" />
+          </div>
         </div>
       </Container>
     </div>

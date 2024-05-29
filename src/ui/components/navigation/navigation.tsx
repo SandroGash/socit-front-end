@@ -16,8 +16,8 @@ export const Navigation = ({}: Props) => {
             <Logo size="small" />
             <div className="flex flex-col">
               <div className="text-gray font-extrabold text-[24px]">Socit</div>
-              <Typography variant="caption4" component="span" theme="gray">
-                Créateur de liens artistiques
+              <Typography variant="caption3" component="span" theme="gray">
+                Créateur de liens acoustiques
               </Typography>
             </div>
           </div>
