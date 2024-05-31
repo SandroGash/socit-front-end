@@ -14,16 +14,16 @@ export const Breadcrums = () => {
   segments[0] = "accueil";
 
   const view = segments.map((path, index) => (
-    <div key={uuidv4()} className="items-center">
+    <div key={uuidv4()} className="flex items-center">
       <Link
-        href={index > 0 ? `/${segments.slice(1, index + 1).join("/")}` : `/`}
+        href={index > 0 ? `/${segments.slice(1, index + 1).join("/")}` : "/"}
       >
         <Typography
           variant="caption3"
           component="span"
           className={clsx(
             path !== lastSegment ? "text-gray-600" : "text-gray",
-            "capitalize hover:text gray animate"
+            "capitalize hover:text-gray animate"
           )}
         >
           {path !== "accueil" ? (
