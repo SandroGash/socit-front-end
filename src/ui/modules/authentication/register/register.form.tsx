@@ -36,7 +36,7 @@ export const RegisterForm = ({ form }: Props) => {
         register={register}
         errors={errors}
         errorMsg="Tu dois renseigner ce champ correctement"
-        id="how-did-hear"
+        id="how_did_hear"
       />
 
       <Button isLoading={isLoading} type="submit" fullWidth>
