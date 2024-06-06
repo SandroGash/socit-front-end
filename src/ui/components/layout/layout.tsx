@@ -3,17 +3,21 @@ import { Breadcrums } from "../breadcrums/breadcrumbs";
 import { Footer } from "../navigation/footer";
 import { Navigation } from "../navigation/navigation";
 import { UserAccountNavigation } from "../navigation/user-account-navigation";
+import { Session } from "../session/session";
+import { SessionStatusTypes } from "@/types/session-status-type";
 
 interface Props {
   children: React.ReactNode;
   isDisplayBreadcrumbs?: boolean;
   withSidebar?: boolean;
+  sessionStatus?: SessionStatusTypes;
 }
 
 export const Layout = ({
   children,
   isDisplayBreadcrumbs = true,
   withSidebar,
+  sessionStatus,
 }: Props) => {
   let view: React.ReactElement = <></>;
 
@@ -33,11 +37,11 @@ export const Layout = ({
   }
 
   return (
-    <>
+    <Session sessionStatus={sessionStatus}>
       <Navigation />
       {isDisplayBreadcrumbs && <Breadcrums />}
       {view}
       <Footer />
-    </>
+    </Session>
   );
 };
